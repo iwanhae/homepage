@@ -11,7 +11,12 @@
 	</main>
 
 	<footer>
-		<p>Developed by <strong>Wanhae Lee</strong> using <a href="https://kit.svelte.dev/">SvelteKit</a> </p>
+		<p>
+			Developed by <strong>Wanhae Lee</strong> using
+			<a href="https://kit.svelte.dev/">SvelteKit</a>
+			Served by
+			<strong><a href="https://www.netlify.com/">Netlify</a></strong>
+		</p>
 	</footer>
 </div>
 

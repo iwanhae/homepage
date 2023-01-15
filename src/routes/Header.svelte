@@ -3,8 +3,6 @@
 </script>
 
 <header>
-	<div class="corner" />
-
 	<nav>
 		<ul>
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
@@ -18,20 +16,12 @@
 			</li>
 		</ul>
 	</nav>
-
-	<div class="corner" />
 </header>
 
 <style>
 	header {
 		display: flex;
-		justify-content: space-between;
-	}
-
-	.corner {
-		margin: 10px;
-		width: 6em;
-		height: 3em;
+		justify-content: center;
 	}
 
 	nav {

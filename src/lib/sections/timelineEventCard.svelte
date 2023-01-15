@@ -1,19 +1,7 @@
 <script lang="ts">
+	import { monthNames } from '$lib/TimelineEvent';
 	import type { TimelineEvent } from '../TimelineEvent';
-	const monthNames = [
-		'Jan',
-		'Feb',
-		'Mar',
-		'Apr',
-		'May',
-		'June',
-		'July',
-		'Aug',
-		'Sep',
-		'Oct',
-		'Nov',
-		'Dec'
-	];
+
 	export let event: TimelineEvent;
 	let showDetail = false;
 </script>
