@@ -116,21 +116,21 @@ const history: PersonalEvent[] = [
         isBreakingEvent: false,
         date: new Date("2020-02"),
         title: "Academic Excellence Award",
-        subtitle: "issed by University of Seoul",
+        subtitle: "issued by University of Seoul",
         tags: ["Univ of Seoul", "Awards", "Scholarship"]
     },
     {
         isBreakingEvent: false,
         date: new Date("2017-08"),
         title: "Academic Excellence Award",
-        subtitle: "issed by University of Seoul",
+        subtitle: "issued by University of Seoul",
         tags: ["Univ of Seoul", "Awards", "Scholarship"]
     },
     {
         isBreakingEvent: false,
         date: new Date("2017-02"),
         title: "Academic Excellence Award",
-        subtitle: "issed by University of Seoul",
+        subtitle: "issued by University of Seoul",
         tags: ["Univ of Seoul", "Awards", "Scholarship"]
     },
     {
