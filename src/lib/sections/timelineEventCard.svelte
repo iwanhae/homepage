@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PersonalEvent } from '../history';
+	import type { TimelineEvent } from '../TimelineEvent';
 	const monthNames = [
 		'Jan',
 		'Feb',
@@ -14,7 +14,7 @@
 		'Nov',
 		'Dec'
 	];
-	export let event: PersonalEvent;
+	export let event: TimelineEvent;
 	let showDetail = false;
 </script>
 
@@ -37,20 +37,29 @@
 	{/if}
 </div>
 
-{#if event.description != undefined}
-	<button
-		class="button"
-		on:click={() => {
-			showDetail = !showDetail;
-		}}
-	>
-		{#if !showDetail}
-			show more
-		{:else}
-			less
+<div style="display: flex;">
+	{#if event.description != undefined}
+		{#if typeof event.link == 'string'}
+			<a class="button" href={event.link}>link</a>
+		{:else if typeof event.link == 'object'}
+			{#each Object.entries(event.link) as [name, link]}
+				<a class="button" href={link}>{name}</a>
+			{/each}
 		{/if}
-	</button>
-{/if}
+		<button
+			class="button"
+			on:click={() => {
+				showDetail = !showDetail;
+			}}
+		>
+			{#if !showDetail}
+				show more
+			{:else}
+				less
+			{/if}
+		</button>
+	{/if}
+</div>
 {#if showDetail}
 	<i>{event.description}</i>
 {/if}

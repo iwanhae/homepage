@@ -1,33 +1,27 @@
-<script>
-	import history from '../history';
-	import TimelineEvent from './timelineEvent.svelte';
-	const monthNames = [
-		'Jan',
-		'Feb',
-		'Mar',
-		'Apr',
-		'May',
-		'June',
-		'July',
-		'Aug',
-		'Sep',
-		'Oct',
-		'Nov',
-		'Dec'
-	];
+<script lang="ts">
+	import type { TimelineEvent } from '../TimelineEvent';
+	import TimelineEventCard from './timelineEventCard.svelte';
+	import PersonalEvents from '../PersonalEvent';
+	import PersonalExperiences, { toTimelineEvent } from '../PersonalExperience';
+
+	let events: TimelineEvent[] = [...PersonalEvents];
+	PersonalExperiences.forEach((e) => {
+		events.push(...toTimelineEvent(e));
+	});
+	events.sort((a, b) => b.date.getTime() - a.date.getTime());
 </script>
 
 <section>
 	<h1>Personal Timeline</h1>
 	<div class="timeline">
-		{#each history as event}
+		{#each events as event}
 			<div
 				class="container"
 				class:right={!event.isBreakingEvent}
 				class:left={event.isBreakingEvent}
 			>
 				<div class="content">
-					<TimelineEvent {event} />
+					<TimelineEventCard {event} />
 				</div>
 			</div>
 		{/each}
